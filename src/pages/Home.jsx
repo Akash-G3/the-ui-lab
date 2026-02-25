@@ -1,8 +1,9 @@
-function Home() {
+
+function Home() { // Home page is actually the exhibition page
   return(
-    <>
-     <h1>Home Page</h1>;
-    </>
+    <div className="min-h-screen w-full bg-white text-gray-900">
+    
+    </div>
   )
 }
 
