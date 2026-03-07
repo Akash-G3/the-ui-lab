@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import profileImg from "../assets/Navpic.jpg";
 
 export default function Navbar() {
@@ -8,8 +7,19 @@ export default function Navbar() {
   const linkBase =
     "text-sm font-medium transition-colors duration-200";
 
-  const activeStyle = "text-black";
   const inactiveStyle = "text-gray-500 hover:text-black";
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    setMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-6 z-50 flex justify-center">
@@ -21,45 +31,40 @@ export default function Navbar() {
                       rounded-full 
                       border border-gray-200">
 
-        {/* Logo / Brand */}
+        {/* Logo */}
         <div className="text-sm font-semibold">
-          UI Lab
+          The UI Lab
         </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
+
+          <button
+            onClick={() => scrollToSection("home")}
+            className={`${linkBase} ${inactiveStyle}`}
           >
             Home
-          </NavLink>
+          </button>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
+          <button
+            onClick={() => scrollToSection("exhibition")}
+            className={`${linkBase} ${inactiveStyle}`}
+          >
+            Exhibition
+          </button>
+
+          <button
+            onClick={() => scrollToSection("about")}
+            className={`${linkBase} ${inactiveStyle}`}
           >
             About
-          </NavLink>
+          </button>
 
-          <NavLink
-            to="/components"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
-          >
-            Components
-          </NavLink>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
 
-          {/* Profile Image */}
           <button className="focus:outline-none">
             <img
               src={profileImg}
@@ -68,13 +73,14 @@ export default function Navbar() {
             />
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-gray-600 hover:text-black transition"
           >
             ☰
           </button>
+
         </div>
       </nav>
 
@@ -84,35 +90,27 @@ export default function Navbar() {
                         bg-white shadow-lg border border-gray-200 
                         rounded-2xl p-6 flex flex-col gap-4 md:hidden">
 
-          <NavLink
-            to="/"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
+          <button
+            onClick={() => scrollToSection("home")}
+            className={`${linkBase} ${inactiveStyle}`}
           >
             Home
-          </NavLink>
+          </button>
 
-          <NavLink
-            to="/about"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
+          <button
+            onClick={() => scrollToSection("exhibition")}
+            className={`${linkBase} ${inactiveStyle}`}
+          >
+            Exhibition
+          </button>
+
+          <button
+            onClick={() => scrollToSection("about")}
+            className={`${linkBase} ${inactiveStyle}`}
           >
             About
-          </NavLink>
+          </button>
 
-          <NavLink
-            to="/components"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
-          >
-            Components
-          </NavLink>
         </div>
       )}
     </header>
