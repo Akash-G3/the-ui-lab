@@ -4,9 +4,26 @@ html {
 }
 
 body {
+  /* background: radial-gradient(
+  circle at top,
+  #ffffff,
+  #f3f4f6,
+  #e5e7eb
+); */
   scroll-snap-type: y mandatory;
 }
 
 section {
   scroll-snap-align: start;
+}
+
+/* shimmer effect styling*/
+@keyframes shimmerLetter {
+  0% { color: #d1d5db; }
+  50% { color: #000000; }
+  100% { color: #d1d5db; }
+}
+
+.shimmer-letter {
+  animation: shimmerLetter 1.5s linear infinite;
 }

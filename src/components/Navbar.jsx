@@ -26,7 +26,7 @@ export default function Navbar() {
       <nav className="flex items-center justify-between 
                       w-[650px] max-w-[95%] 
                       px-8 py-3 
-                      bg-white 
+                      bg-bg-[radial-gradient(circle_at_top,_#ffffff,_#f3f4f6,_#e5e7eb)] 
                       shadow-lg 
                       rounded-full 
                       border border-gray-200">
