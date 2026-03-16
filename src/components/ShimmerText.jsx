@@ -1,26 +1,41 @@
-export default function ShimmerText() {
+import { useEffect, useState } from "react";
+
+export default function ShimmerTypingText() {
   const text = `A Small lab of Interfaces
 where ideas, learning 
 and experimentation
 turn into a real UI`;
 
-  return (
-    <h1 className="text-3xl leading-relaxed max-w-xl text-gray-400">
-      {text.split("").map((letter, index) => {
-        if (letter === "\n") {
-          return <br key={index} />;
-        }
+  const [displayText, setDisplayText] = useState("");
+  const [typingDone, setTypingDone] = useState(false);
 
-        return (
-          <span
-            key={index}
-            className="inline-block shimmer-letter"
-            style={{ animationDelay: `${index * 0.05}s` }}
-          >
-            {letter === " " ? "\u00A0" : letter}
-          </span>
-        );
-      })}
+  useEffect(() => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      setDisplayText(text.slice(0, index + 1));
+      index++;
+
+      if (index === text.length) {
+        clearInterval(interval);
+        setTypingDone(true);
+      }
+    }, 45);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <h1 className="text-3xl md:text-2xl font-semibold leading-relaxed font-mono">
+      <span
+        className={`whitespace-pre-line ${
+          typingDone ? "shimmer-text" : ""
+        } bg-gradient-to-r from-gray-400 via-white to-gray-400 bg-clip-text text-transparent`}
+      >
+        {displayText}
+      </span>
+
+      <span className="cursor ml-1">|</span>
     </h1>
   );
 }
