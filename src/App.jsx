@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import './index.css'
 import Home from "./sections/home.jsx";
 import Exhibition from "./sections/exhibition.jsx";
-import About from "./sections/About.jsx";
+import About from "./sections/about.jsx";
 
 function App() {
   return (
