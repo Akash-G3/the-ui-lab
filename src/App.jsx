@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import './index.css'
 import Home from "./sections/home.jsx";
-import Exhibition from "./sections/exhibition.jsx";
+import Exhibition from "./sections/exhibition";
 import About from "./sections/about.jsx";
 
 function App() {
@@ -21,3 +21,4 @@ function App() {
 }
 
 export default App
+

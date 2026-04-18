@@ -1,0 +1,178 @@
+/* =========================
+   MASONRY CONTAINER
+========================= */
+.masonry {
+  column-count: 4;
+  column-gap: 18px;
+  padding: 0 60px; /* left-right spacing */
+}
+
+/* =========================
+   MASONRY ITEM
+========================= */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* =========================
+   THUMBNAIL WRAPPER
+========================= */
+.thumbnail-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* IMAGE */
+.thumbnail-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* HOVER ZOOM */
+.thumbnail-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   OVERLAY (TITLE ON IMAGE)
+========================= */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    transparent
+  );
+
+  color: white;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+/* =========================
+   LIGHTBOX BACKDROP
+========================= */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+/* =========================
+   LIGHTBOX CONTENT BOX
+========================= */
+.lightbox-content {
+  position: relative;
+
+  width: 85%;
+  height: 85%;
+
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   LIGHTBOX HEADER
+========================= */
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 15px;
+  background: #f5f5f5;
+}
+
+.lightbox-header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.lightbox-header a {
+  text-decoration: none;
+  font-size: 14px;
+  color: blue;
+  margin-right: 48px;
+    display: inline-block;
+  padding: 6px 12px;
+
+  background-color: #000;
+  color: #fff;
+
+  text-decoration: none;
+  font-size: 14px;
+
+  border-radius: 6px; /* rounded corners */
+  transition: all 0.2s ease;
+}
+
+/* =========================
+   IFRAME (MAIN CONTENT)
+========================= */
+.lightbox iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  font-size: 18px;
+  background: black;
+  color: white;
+
+  border: none;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  border-radius: 6px;
+}
