@@ -1,160 +1,120 @@
 /* =========================
-   MASONRY CONTAINER
+   GLOBAL RESET (helps stability)
 ========================= */
-.masonry {
-  column-count: 4;
-  column-gap: 18px;
-  padding: 0 60px; /* left-right spacing */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
 
 /* =========================
-   MASONRY ITEM
+   GRID LAYOUT
 ========================= */
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 16px;
-  cursor: pointer;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 28px;
+  padding: 28px;
 }
 
 /* =========================
-   THUMBNAIL WRAPPER
+   CARD
 ========================= */
-.thumbnail-wrapper {
-  position: relative;
+.card {
+  display: flex;
+  background: #fff;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
+  cursor: pointer;
+
+   overflow: hidden; /* prevents image overflow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* IMAGE */
-.thumbnail-wrapper img {
-  width: 100%;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+.card img {
+  padding: 12px;
+  width: 42%;
+  height: 300px;
+  object-fit: cover;
   display: block;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-/* HOVER ZOOM */
-.thumbnail-wrapper:hover img {
-  transform: scale(1.05);
+  border-radius: 22px;
+  object-fit: cover; 
 }
 
 /* =========================
-   OVERLAY (TITLE ON IMAGE)
+   CARD CONTENT
 ========================= */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
+.card-content {
+  width: 58%;
+  padding: 14px;
+}
 
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    transparent
-  );
+.card-content h3 {
+  text-align: center;
+  /* margin: 0 0 8px; */
+  font-size: 16px;
+}
 
-  color: white;
-  font-size: 14px;
+.card-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
 }
 
 /* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 1024px) {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 768px) {
-  .masonry {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry {
-    column-count: 1;
-  }
-}
-
-/* =========================
-   LIGHTBOX BACKDROP
+   LIGHTBOX (FULLSCREEN FIXED)
 ========================= */
 .lightbox {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* full screen */
 
-  background: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.9);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 999;
+  z-index: 9999;
 }
 
 /* =========================
-   LIGHTBOX CONTENT BOX
+   LIGHTBOX BOX
 ========================= */
-.lightbox-content {
+.lightbox-box {
   position: relative;
 
-  width: 85%;
-  height: 85%;
+  width: 90vw;
+  height: 90vh;
 
-  background: white;
+  max-width: 1200px;
+  max-height: 800px;
+
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
 }
 
 /* =========================
-   LIGHTBOX HEADER
+   IFRAME
 ========================= */
-.lightbox-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 10px 15px;
-  background: #f5f5f5;
-}
-
-.lightbox-header h2 {
-  font-size: 16px;
-  margin: 0;
-}
-
-.lightbox-header a {
-  text-decoration: none;
-  font-size: 14px;
-  color: blue;
-  margin-right: 48px;
-    display: inline-block;
-  padding: 6px 12px;
-
-  background-color: #000;
-  color: #fff;
-
-  text-decoration: none;
-  font-size: 14px;
-
-  border-radius: 6px; /* rounded corners */
-  transition: all 0.2s ease;
-}
-
-/* =========================
-   IFRAME (MAIN CONTENT)
-========================= */
-.lightbox iframe {
-  flex: 1;
+.lightbox-box iframe {
   width: 100%;
+  height: 100%;
   border: none;
 }
 
@@ -171,8 +131,35 @@
   color: white;
 
   border: none;
-  padding: 5px 10px;
+  padding: 6px 10px;
 
   cursor: pointer;
   border-radius: 6px;
+
+  z-index: 10;
+}
+
+/* =========================
+   OPEN LINK BUTTON
+========================= */
+.open-btn {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+
+  background: white;
+  color: black;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-size: 13px;
+
+  z-index: 10;
+  transition: 0.2s;
+}
+
+.open-btn:hover {
+  background: #eee;
 }

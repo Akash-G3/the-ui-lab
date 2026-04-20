@@ -2,27 +2,22 @@ export default function Lightbox({ item, onClose }) {
   if (!item) return null;
 
   return (
-    <div className="lightbox" onClick={onClose}>
-      <div
-        className="lightbox-content"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className="close-btn" onClick={onClose}>
-          ✕
-        </button>
+   <div className="lightbox" onClick={onClose}>
+  <div className="lightbox-box" onClick={(e) => e.stopPropagation()}>
+    
+    <button className="close-btn" onClick={onClose}>✕</button>
 
-        <div className="lightbox-header">
-          <h2>{item.title}</h2>
-          <a href={item.url} target="_blank" rel="noreferrer">
-            Open ↗
-          </a>
-        </div>
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noreferrer"
+      className="open-btn"
+    >
+      Open ↗
+    </a>
 
-        <iframe
-          src={item.url}
-          title={item.title}
-        />
-      </div>
-    </div>
+    <iframe src={item.url} title={item.title} />
+  </div>
+</div>
   );
 }
