@@ -1,56 +1,70 @@
 import { useState } from "react";
 import MasonryGrid from "../components/MansoryGrid";
 import Lightbox from "../components/Lightbox";
+import ObysImg from "../assets/images/obys.png"
+import DribbleImg from "../assets/images/dribble.png"
+import CynthiaImg from "../assets/images/cynthia.png"
+import PrimierImg from "../assets/images/primier.png"
+import SherlockImg from "../assets/images/sherlock.png"
+import CottonImg from "../assets/images/cotton-weave.png"
+import ShopImg from "../assets/images/shop.png"
+import FashionImg from "../assets/images/fashion.png"
+import ClassicImg from "../assets/images/classic.png"
 
 const projects = [
+   {
+    title: "Project-0 Obys-Agency",
+    thumbnail: ObysImg,
+    url: "https://akash-g3.github.io/Obys-Agency/",
+    description: "This a great website clone project with modern UI and great animations ... It takes a while to complete it I have used - HTML CSS JAVASCRIPT and libraries - GSAP Locomotive SheryJS, My best Work.",
+  },
   {
     title: "Project-1 Dribble",
-    thumbnail: "https://cdn.dribbble.com/userupload/47430454/file/558da36729878cd440452e81a7d2e7d4.png?resize=752x&vertical=center",
+    thumbnail: DribbleImg,
     url: "https://akash-g3.github.io/Dribble-UI/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "The user interface design of Dribble website Most of the thing is done using HTML and CSS for a very little part I used JavaScript ",
   },
   {
     title: "Project-2 Cynthia",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4E22AQFRBl01FiMfHg/feedshare-shrink_800/feedshare-shrink_800/0/1723785992787?e=1778112000&v=beta&t=ijOpzZFAK5ddzeZjNC7p2F2WkXuxLQj9oyfWenPkYXU",
+    thumbnail: CynthiaImg,
     url: "https://akash-g3.github.io/CynthiaUgwuClone/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "This project is a UI and Animation clone of Cynthia Ugwu's portfolio. Its a designers portfolio website programmed with great animations using HTML CSS JavaScript and  animation libraries GSAP and Locomotive .",
 
   },
   {
     title: "Project-3 Premier",
-    thumbnail: "https://picsum.photos/300/352",
+    thumbnail: PrimierImg,
     url: "https://akash-g3.github.io/premier/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "Premier is a fashion model theme based website .. The website is modern and professional in UI with multiples pages and animations on selected pages with customize layout navigation and footers Completed the programming of this website and made it live ",
   },
    {
     title: "Project-4 Sherlock",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4E22AQHviU2JG6Ak6g/feedshare-shrink_800/feedshare-shrink_800/0/1719462813124?e=1778112000&v=beta&t=bugdyKEArx0DyK1XxVWKMxHy0TizU-W1XY9u31AHOlQ",
+    thumbnail: SherlockImg,
     url: "https://akash-g3.github.io/Trendline/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "Sherlock is a website project , single page fully responsive to mobile devices too, It has modern UI and included scrolling to text and images to.",
   },
    {
     title: "Project-CottonWeave",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4E22AQEz9_-_Rslt7Q/feedshare-shrink_800/feedshare-shrink_800/0/1718601397119?e=1778112000&v=beta&t=udFaPoMpTGM5qP5PAekZ9caekG9Abh9sJC8sYKYBK6A",
+    thumbnail: CottonImg,
     url: "https://akash-g3.github.io/cotton-weave/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "A cotton weave is a website design page of a cotton-made cloths this is the most clean and beautiful design and perfectly responsive to Mobile devices as well.",
   },
    {
     title: "Project Shop",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4E22AQFPkdr6jc-ULQ/feedshare-shrink_800/feedshare-shrink_800/0/1718600270856?e=1778112000&v=beta&t=hX6gsA8W5TcPiZ5xfETSEE4UYFHIHSx1MUd94zeIRPM",
+    thumbnail: ShopImg, 
     url: "https://akash-g3.github.io/Shop-Jacket/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    description: "This is single a page website design , which I made as a project assignment from my course and under guidance of Sheriyans Coding School",
   },
    {
     title: "Project TheClassic",
-    thumbnail: "https://picsum.photos/300/350",
-    url: "https://example.com",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    thumbnail: ClassicImg,
+    url: "https://akash-g3.github.io/BuyPet-Webpage/",
+    description: "This website is the first  project of my development and learning period ,I made this website under the course of Dr.Anjela Yu .",
   },
    {
     title: "Project Shoot",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4E22AQFu96xTo3BwRA/feedshare-shrink_800/feedshare-shrink_800/0/1718436971635?e=1778112000&v=beta&t=vxiFRO-I9Yi3Ke0zxtRk9jO4iH4EjEpnA0VlHklOrZQ",
-    url: "https://akash-g3.github.io/Fashion_site_clone/",
-    description: " A Better Way to Build Interfaces Build Fast • Ship Faster • Pixel Perfect • Code & Chill • Designed to Impress 🚀",
+    thumbnail: FashionImg,
+    description: "The webpage created using HTML and CSS . This project is the beginner level of Website development completed by me,",
   },
 
 ];
