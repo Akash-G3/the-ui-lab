@@ -16,8 +16,9 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-  gap: 28px;
+  gap: 22px;
   padding: 28px;
+
 }
 
 /* =========================
@@ -29,7 +30,7 @@ body {
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
-
+   margin: 8px 0;
    overflow: hidden; /* prevents image overflow */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -44,7 +45,7 @@ body {
 ========================= */
 .card img {
   width: 62%;
-  height: 300px;
+  height: 350px;
   display: block;
   object-fit: cover; 
   object-position: top;

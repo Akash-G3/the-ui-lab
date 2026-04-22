@@ -29,7 +29,10 @@ export default function Navbar() {
                       bg-bg-[radial-gradient(circle_at_top,_#ffffff,_#f3f4f6,_#e5e7eb)] 
                       shadow-lg 
                       rounded-full 
-                      border border-gray-200">
+                      border border-gray-200
+                       z-50 
+                bg-white/10 backdrop-blur-md 
+                border-b border-white/10">
 
         {/* Logo */}
         <div className="text-sm font-semibold">

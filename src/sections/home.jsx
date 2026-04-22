@@ -15,10 +15,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="imageSection flex-1 pt-6">
-     
-      </div>
-
     </section>
   )
 }
