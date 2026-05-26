@@ -4,8 +4,9 @@
   --backgound: #FFFFFF;
 }
 
-
+html,
 body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
