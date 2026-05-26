@@ -1,5 +1,6 @@
 // Import components you want to test here
 
+
 // Playground page
 // A safe space to experiment with UI components.
 export default function PlaygroundPage() {
@@ -13,7 +14,7 @@ export default function PlaygroundPage() {
 
       {/* Component testing area */}
       <section>
-
+        
       </section>
     </main>
   );
