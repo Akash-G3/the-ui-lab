@@ -3,7 +3,7 @@ import Logo from "./logo";
 
 export default function Header() {
   return (
-    <header className="relative flex items-center justify-center py-4">
+    <header className="relative flex items-center justify-center pt-4">
 
       {/* Logo */}
       <div className="absolute left-14">

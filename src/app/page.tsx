@@ -1,12 +1,14 @@
 import Title from "@/components/title";
 import HeroText from "@/components/heroText";
+import HeroVid from "@/components/heroVid";
 
 export default function HomePage() {
   return (
-    <main className="container min-h-screen py-10">
+    <main className="container min-h-screen py-6">
       <section className="space-y-4">
         <Title />
         <HeroText />
+        <HeroVid />
       </section>
     </main>
   );
