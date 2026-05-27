@@ -15,7 +15,7 @@ import { motion } from "framer-motion"
 
 export default function Title() {
   return (
-    <div className="relative w-fit mx-auto overflow-hidden">
+    <div className="relative w-fit mx-auto overflow-hidden mt-8">
       
       <h1 className="text-7xl md:text-9xl font-bold tracking-[0.10em] whitespace-nowrap text-neutral-300 select-none">
         the.ui

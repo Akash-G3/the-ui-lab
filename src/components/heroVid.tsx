@@ -1,23 +1,3 @@
-// export default function HeroVid() {
-//   return (
-//     <section className="w-full mt-10 flex justify-center">
-//       <video
-//         className="mx-w-4xl h-[417px] object-cover"
-//         autoPlay={true}
-//         muted={true}
-//         loop={true}
-//         playsInline={true}
-//         preload="auto"
-//       >
-//         <source
-//           src="/the-ui-lab.mp4"
-//           type="video/mp4"
-//         />
-//       </video>
-//     </section>
-//   )
-// }
-
 
 // "use client"
 
@@ -33,24 +13,29 @@
 //         delay: 3.4,
 //         ease: "easeOut",
 //       }}
-//       className="w-full mt-10 flex justify-center"
+//       className="w-full mt-10 flex justify-center px-6"
 //     >
-//       <video
-//         className="w-full max-w-5xl max-h-[417px] object-cover rounded-t-2xl"
-//         autoPlay={true}
-//         muted={true}
-//         loop={true}
-//         playsInline={true}
-//         preload="auto"
-//       >
-//         <source
-//           src="/the-ui-lab.mp4"
-//           type="video/mp4"
-//         />
-//       </video>
+//       <div className="w-full max-w-6xl max-h-[512px] overflow-hidden rounded-t-2xl shadow-2xl shadow-black/10">
+        
+//         <video
+//           className="w-full h-full object-cover"
+//           autoPlay
+//           muted
+//           loop
+//           playsInline
+//           preload="auto"
+//         >
+//           <source
+//             src="/the-ui-lab.mp4"
+//             type="video/mp4"
+//           />
+//         </video>
+
+//       </div>
 //     </motion.section>
 //   )
 // }
+
 
 "use client"
 
@@ -66,9 +51,43 @@ export default function HeroVid() {
         delay: 3.4,
         ease: "easeOut",
       }}
-      className="w-full mt-10 flex justify-center px-6"
+      className="w-full mt-10 flex px-10 gap-8"
     >
-      <div className="w-full max-w-5xl max-h-[417px] overflow-hidden rounded-t-2xl shadow-2xl shadow-black/10">
+      <div className="w-full max-w-1/3 h-[460px] overflow-hidden rounded-t-2xl shadow-2xl shadow-black/10">
+        
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source
+            src="/the-ui-lab.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+      </div>
+         <div className="w-full max-w-1/3 h-[460px] overflow-hidden rounded-t-2xl shadow-2xl shadow-black/10">
+        
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source
+            src="/the-ui-lab.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+      </div>
+         <div className="w-full max-w-1/3 h-[460px] overflow-hidden rounded-t-2xl shadow-2xl shadow-black/10">
         
         <video
           className="w-full h-full object-cover"
