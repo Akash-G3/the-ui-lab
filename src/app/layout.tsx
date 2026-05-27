@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Header from "@/components/header";
+import "./globals.css"
+import SmoothScrollProvider from "@/components/providers/smooth-scroll-provide";
 
 import "./globals.css";
 
@@ -29,6 +31,7 @@ export default function RootLayout({
 
       {/* Apply font globally */}
       <body className={geist.className}>
+        <SmoothScrollProvider>
 
         {/* Persistent layout UI */}
         <Header />
@@ -37,6 +40,8 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+
+        </SmoothScrollProvider>
 
       </body>
     </html>
