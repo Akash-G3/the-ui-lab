@@ -17,7 +17,7 @@ export default function HeroText() {
       className="text-center"
     >
       <section className="flex justify-center">
-        <p className="text-sm md:text-base font-medium text-gray-700 tracking-wide whitespace-nowrap">
+        <p className="text-sm md:text-base font-medium text-gray-500 tracking-wide whitespace-nowrap">
           <TypeAnimation
             sequence={[
               2000,
