@@ -2,7 +2,7 @@
 
 export default function ExhibitTitle() {
   return (
-    <section className="relative w-full px-6 pt-28 md:pt-8 pb-16">
+    <section className="relative w-full px-6 pt-28 md:pt-8 pb-6">
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
 
         {/* subtle top label */}

@@ -8,7 +8,7 @@ export default function AfterSec() {
         <span className="text-orange-500">_gentleman</span>
       </h1>
        <p className="mt-6 text-sm md:text-[15px] leading-7 text-neutral-500 font-normal tracking-[-0.01em]">
-        moving towards the business by exploring the amazing creation ahead
+        enough of the introduction — explore the work ahead.
         </p>
       </div>
         </section>
