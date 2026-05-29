@@ -1,157 +1,3 @@
-// "use client"
-
-// import Image from "next/image"
-// import { useEffect, useState } from "react"
-// import { AnimatePresence, motion } from "framer-motion"
-// import { projects } from "@/lib/projects"
-// import { ExternalLink, X } from "lucide-react"
-
-// interface Project {
-//   id: number
-//   title: string
-//   description: string
-//   image: string
-//   url: string
-//   tags: string[]
-// }
-
-// export default function ExhibitionShowcase() {
-//   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-
-//   useEffect(() => {
-//     if (selectedProject) {
-//       document.body.style.overflow = "hidden"
-//     } else {
-//       document.body.style.overflow = "auto"
-//     }
-
-//     return () => {
-//       document.body.style.overflow = "auto"
-//     }
-//   }, [selectedProject])
-
-//   useEffect(() => {
-//     const handleEscape = (e: KeyboardEvent) => {
-//       if (e.key === "Escape") {
-//         setSelectedProject(null)
-//       }
-//     }
-
-//     window.addEventListener("keydown", handleEscape)
-
-//     return () => {
-//       window.removeEventListener("keydown", handleEscape)
-//     }
-//   }, [])
-
-//   return (
-//     <>
-//       <section className="w-full px-6 pb-24">
-//         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-//           {projects.map((project, index) => (
-//             <motion.button
-//               key={project.id}
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               viewport={{ once: true }}
-//               transition={{ duration: 0.6, delay: index * 0.08 }}
-//               whileHover={{ y: -6 }}
-//               onClick={() => setSelectedProject(project)}
-//               className="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-white text-left"
-//             >
-//               <div className="relative aspect-[4/3] overflow-hidden">
-//                 <Image
-//                   src={project.image}
-//                   alt={project.title}
-//                   fill
-//                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-//                 />
-
-//                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-90" />
-
-//                 <div className="absolute bottom-0 left-0 right-0 p-6">
-//                   <div className="mb-3 flex flex-wrap gap-2">
-//                     {project.tags.map((tag) => (
-//                       <span
-//                         key={tag}
-//                         className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white backdrop-blur-sm"
-//                       >
-//                         {tag}
-//                       </span>
-//                     ))}
-//                   </div>
-
-//                   <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white">
-//                     {project.title}
-//                   </h2>
-
-//                   <p className="mt-2 max-w-md text-sm leading-6 text-neutral-200">
-//                     {project.description}
-//                   </p>
-//                 </div>
-//               </div>
-//             </motion.button>
-//           ))}
-//         </div>
-//       </section>
-
-//       <AnimatePresence>
-//         {selectedProject && (
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             exit={{ opacity: 0 }}
-//             className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-md"
-//           >
-//             <motion.div
-//               initial={{ scale: 0.96, opacity: 0, y: 20 }}
-//               animate={{ scale: 1, opacity: 1, y: 0 }}
-//               exit={{ scale: 0.96, opacity: 0, y: 20 }}
-//               transition={{ duration: 0.25 }}
-//               className="relative h-[92vh] w-full max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-950 shadow-2xl"
-//             >
-//               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-//                 <div>
-//                   <h3 className="text-sm font-medium tracking-wide text-white">
-//                     {selectedProject.title}
-//                   </h3>
-//                 </div>
-
-//                 <div className="flex items-center gap-3">
-//                   <a
-//                     href={selectedProject.url}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white transition-colors hover:bg-white/10"
-//                   >
-//                     Visit Site
-//                     <ExternalLink size={16} />
-//                   </a>
-
-//                   <button
-//                     onClick={() => setSelectedProject(null)}
-//                     className="rounded-full border border-white/10 bg-white/5 p-2 text-white transition-colors hover:bg-white/10"
-//                   >
-//                     <X size={18} />
-//                   </button>
-//                 </div>
-//               </div>
-
-//               <div className="relative h-[calc(92vh-73px)] w-full bg-white">
-//                 <iframe
-//                   src={selectedProject.url}
-//                   className="h-full w-full"
-//                   loading="lazy"
-//                 />
-//               </div>
-//             </motion.div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </>
-//   )
-// }
-
 
 
 "use client"
@@ -171,15 +17,13 @@ interface Project {
   tags: string[]
 }
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function ExhibitionShowcase() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
+    document.body.style.overflow = selectedProject ? "hidden" : "auto"
 
     return () => {
       document.body.style.overflow = "auto"
@@ -202,49 +46,109 @@ export default function ExhibitionShowcase() {
 
   return (
     <>
-      <section className="w-full px-6 pb-24">
+      <section className="relative overflow-hidden px-6 pb-32 pt-10">
+
+        {/* editorial background */}
+        <div className="absolute inset-0 -z-10 bg-[#f7f7f4]" />
+
+        {/* ambient gradients */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.7 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8 }}
+          className="absolute left-1/2 top-[-10%] -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-orange-100 blur-[120px]"
+        />
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, delay: 0.2 }}
+          className="absolute bottom-[-20%] right-[10%] -z-10 h-[280px] w-[280px] rounded-full bg-neutral-300 blur-[100px]"
+        />
+
+        {/* subtle grid */}
+        <div
+          className="absolute inset-0 -z-10 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
+
+        {/* soft vignette */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.03))]" />
+
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {projects.map((project, index) => (
             <motion.button
               key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: 40,
+                filter: "blur(10px)",
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+              }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-              whileHover={{ y: -6 }}
+              transition={{
+                duration: 1,
+                delay: index * 0.08,
+                ease,
+              }}
+              whileHover={{
+                y: -8,
+              }}
               onClick={() => setSelectedProject(project)}
-              className="group relative overflow-hidden rounded-[2rem] border border-neutral-200 bg-white text-left"
+              className="group relative overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 text-left shadow-[0_10px_60px_rgba(0,0,0,0.04)] backdrop-blur-xl"
             >
+
+              {/* card glow */}
+              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-black/5 transition-all duration-700 group-hover:ring-orange-300/40" />
+
+              {/* top reflection */}
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/40 to-transparent opacity-60" />
+
               <div className="relative aspect-[4/3] overflow-hidden">
 
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-top transition-all duration-[1400ms] group-hover:scale-[1.04]"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent opacity-90" />
+                {/* cinematic overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
+                {/* floating glow */}
+                <div className="absolute bottom-[-10%] left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-orange-400/30 blur-[90px] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+                {/* content */}
                 <div className="absolute bottom-0 left-0 right-0 p-7">
 
-                  <div className="mb-4 flex flex-wrap gap-2">
+                  <div className="mb-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white backdrop-blur-sm"
+                        className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-white/80 backdrop-blur-md"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white">
+                  <h2 className="text-3xl font-semibold tracking-[-0.05em] text-white">
                     {project.title}
                   </h2>
 
-                  <p className="mt-3 max-w-md text-sm leading-6 text-neutral-200">
+                  <p className="mt-3 max-w-md text-sm leading-7 tracking-[-0.01em] text-neutral-200">
                     {project.description}
                   </p>
 
@@ -254,31 +158,68 @@ export default function ExhibitionShowcase() {
           ))}
 
         </div>
+
+        {/* floating micro element */}
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="pointer-events-none absolute bottom-10 left-1/2 hidden h-2 w-2 -translate-x-1/2 rounded-full bg-orange-400 md:block"
+        />
       </section>
 
+      {/* LIGHTBOX */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 p-4 backdrop-blur-xl"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4 backdrop-blur-2xl"
           >
+
+            {/* ambient backdrop */}
+            <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-[140px]" />
+
             <motion.div
-              initial={{ scale: 0.96, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.96, opacity: 0, y: 20 }}
-              transition={{ duration: 0.25 }}
-              className="relative h-[92vh] w-full max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-950 shadow-2xl"
+              initial={{
+                scale: 0.96,
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                scale: 0.97,
+                opacity: 0,
+                y: 20,
+              }}
+              transition={{
+                duration: 0.45,
+                ease,
+              }}
+              className="relative h-[92vh] w-full max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/80 shadow-[0_20px_80px_rgba(0,0,0,0.18)] backdrop-blur-2xl"
             >
 
-              {/* floating controls */}
-              <div className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-6 py-5">
+              {/* top bar */}
+              <div className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between border-b border-black/5 bg-white/50 px-6 py-5 backdrop-blur-2xl">
 
-                <div className="rounded-full border border-white/10 bg-black/30 px-4 py-2 backdrop-blur-xl">
-                  <h3 className="text-sm font-medium tracking-wide text-white/90">
+                <div>
+                  <h3 className="text-sm font-medium tracking-wide text-neutral-900">
                     {selectedProject.title}
                   </h3>
+
+                  <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-neutral-400">
+                    immersive digital experience
+                  </p>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -287,15 +228,19 @@ export default function ExhibitionShowcase() {
                     href={selectedProject.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-white/90 backdrop-blur-xl transition-all hover:bg-white/10"
+                    className="group flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-5 py-2.5 text-sm text-neutral-700 backdrop-blur-xl transition-all duration-300 hover:border-orange-300 hover:bg-orange-50"
                   >
                     Visit Site
-                    <ExternalLink size={16} />
+
+                    <ExternalLink
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
                   </a>
 
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="rounded-full border border-white/10 bg-black/30 p-2 text-white/90 backdrop-blur-xl transition-all hover:bg-white/10"
+                    className="rounded-full border border-black/10 bg-white/60 p-2.5 text-neutral-700 backdrop-blur-xl transition-all duration-300 hover:bg-black/5"
                   >
                     <X size={18} />
                   </button>
@@ -303,8 +248,8 @@ export default function ExhibitionShowcase() {
                 </div>
               </div>
 
-              {/* iframe preview */}
-              <div className="relative h-full w-full bg-white">
+              {/* iframe */}
+              <div className="h-full w-full overflow-hidden rounded-[2rem] bg-white pt-[76px]">
                 <iframe
                   src={selectedProject.url}
                   className="h-full w-full"

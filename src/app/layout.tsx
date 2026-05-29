@@ -27,10 +27,10 @@ export default function RootLayout({
   children,
 }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#0f0f10]  bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_40%)]">
 
       {/* Apply font globally */}
-      <body className={geist.className}>
+      <body className={`${geist.className} bg-[#0f0f10]`}>
         <SmoothScrollProvider>
 
         {/* Persistent layout UI */}

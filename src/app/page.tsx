@@ -1,5 +1,5 @@
 import Title from "@/components/title";
-import HeroText from "@/components/heroText";
+// import HeroText from "@/components/heroText";
 import HeroVid from "@/components/heroVid";
 import AfterSec from "@/components/afterSec";
 import Miniature from "@/components/miniature";
@@ -9,7 +9,7 @@ export default function HomePage() {
     <main className="container min-h-screen">
       <section className="">
         <Title />
-        <HeroText />
+        {/* <HeroText /> */}
         <HeroVid />
         <AfterSec />
         <Miniature />

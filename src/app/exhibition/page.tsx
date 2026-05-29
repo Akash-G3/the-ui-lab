@@ -4,7 +4,7 @@ import ExhibitionShowcase from "@/components/exhibition-showcase";
 export default function ExhibitionPage() {
   return (
     <section className="container">
-      <div className="space-y-6">
+      <div className="">
         <ExhibitTitle />
         <ExhibitionShowcase />
       </div>
