@@ -7,7 +7,7 @@ import Miniature from "@/components/miniature";
 export default function HomePage() {
   return (
     <main className="container min-h-screen">
-      <section className="">
+      <section className="home">
         <Title />
         {/* <HeroText /> */}
         <HeroVid />

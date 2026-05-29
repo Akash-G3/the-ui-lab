@@ -1,5 +1,4 @@
 
-
 "use client"
 
 import Image from "next/image"
@@ -17,7 +16,7 @@ interface Project {
   tags: string[]
 }
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.22, 1, 0.36, 1] as const
 
 export default function ExhibitionShowcase() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
@@ -81,7 +80,7 @@ export default function ExhibitionShowcase() {
         {/* soft vignette */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.03))]" />
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto grid max-w-[92rem] grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
 
           {projects.map((project, index) => (
             <motion.button
@@ -106,16 +105,16 @@ export default function ExhibitionShowcase() {
                 y: -8,
               }}
               onClick={() => setSelectedProject(project)}
-              className="group relative overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 text-left shadow-[0_10px_60px_rgba(0,0,0,0.04)] backdrop-blur-xl"
+              className="group relative overflow-hidden rounded-[1.6rem] border border-black/5 bg-white/70 text-left shadow-[0_10px_60px_rgba(0,0,0,0.04)] backdrop-blur-xl"
             >
 
               {/* card glow */}
-              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-black/5 transition-all duration-700 group-hover:ring-orange-300/40" />
+              <div className="absolute inset-0 rounded-[1.6rem] ring-1 ring-black/5 transition-all duration-700 group-hover:ring-orange-300/40" />
 
               {/* top reflection */}
               <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/40 to-transparent opacity-60" />
 
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/3.2] overflow-hidden">
 
                 <Image
                   src={project.image}
@@ -206,7 +205,7 @@ export default function ExhibitionShowcase() {
                 duration: 0.45,
                 ease,
               }}
-              className="relative h-[92vh] w-full max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/80 shadow-[0_20px_80px_rgba(0,0,0,0.18)] backdrop-blur-2xl"
+              className="relative h-[92vh] w-full max-w-7xl overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/80 shadow-[0_20px_80px_rgba(0,0,0,0.18)] backdrop-blur-2xl"
             >
 
               {/* top bar */}
