@@ -31,7 +31,7 @@ export const projects = [
     title: "dribble UI",
     description:
       "a simple Dribbble UI clone made to practice modern layouts and frontend design.",
-    image: "/projects/dribble.gif",
+    image: "/projects/dribble.jpg",
     url: "https://akash-g3.github.io/Dribble-UI/",
     tags: ["UI", "Clean", ""],
   },
