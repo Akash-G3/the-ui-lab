@@ -159,7 +159,7 @@ export default function ExhibitTitle() {
 
           {/* description */}
           <p className="max-w-xl text-sm leading-8 tracking-[-0.01em] text-white/45 md:text-[15px]">
-            A curated archive of interfaces, interactions, and immersive
+            a curated archive of interfaces, interactions, and immersive
             experiments — crafted through exploration, visual restraint,
             motion systems, and a constant pursuit of refined digital
             experiences.

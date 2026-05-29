@@ -1,5 +1,6 @@
 import ExhibitTitle from "@/components/exhibit-title";
 import ExhibitionShowcase from "@/components/exhibition-showcase";
+import ExhibitionClosing from "../../components/exhibition-closing";
 
 export default function ExhibitionPage() {
   return (
@@ -7,6 +8,7 @@ export default function ExhibitionPage() {
       <div className="">
         <ExhibitTitle />
         <ExhibitionShowcase />
+        <ExhibitionClosing />
       </div>
     </section>
   );
