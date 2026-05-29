@@ -5,7 +5,7 @@ export const projects = [
     description:
       "a project with smooth animations and eye-candy UI, built using libraries like GSAP and SheryJS.",
     image: "/projects/obys-agency.jpg",
-    url: "https://akash-g3.github.io/CynthiaUgwuClone/",
+    url: "https://akash-g3.github.io/Obys-Agency/",
     tags: ["GSAP", "SheryJS", "UI"],
   },
   {
