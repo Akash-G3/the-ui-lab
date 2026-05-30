@@ -1,21 +1,20 @@
+import AboutBackground from "@/components/about-background";
+
 export default function AboutPage() {
   return (
-    <section className="container py-16">
-      <div className="max-w-3xl space-y-6">
-        <p className="text-sm text-neutral-500">
-          About
-        </p>
+         <main className="relative min-h-screen bg-[#f7f7f4] overflow-hidden">
+      
+      {/* BACKGROUND */}
+      <AboutBackground />
 
-        <h1 className="text-4xl font-bold tracking-tight">
-          Building interfaces with curiosity and intent.
-        </h1>
-
-        <p className="text-neutral-600 leading-relaxed">
-          UI Lab is a personal space for experimenting with
-          frontend engineering, interaction design, animations,
-          layouts, and modern web experiences.
-        </p>
+      {/* CONTENT */}
+      <div className="relative z-10">
+        {/* Hero section */}
+        {/* About text */}
+        {/* Social links */}
       </div>
-    </section>
+
+    </main>
+    
   );
 }

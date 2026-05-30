@@ -1,6 +1,7 @@
 // Import components you want to test here
 import HeroVid from "@/components/heroVid";
 import Miniature from "@/components/miniature";
+import AboutBackground from "@/components/about-background";
 
 // Playground page
 // A safe space to experiment with UI components.
@@ -15,8 +16,9 @@ export default function PlaygroundPage() {
 
       {/* Component testing area */}
       <section>
-        <HeroVid />
-        <Miniature />
+
+    
+       
       </section>
     </main>
   );
