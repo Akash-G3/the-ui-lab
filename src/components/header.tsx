@@ -4,7 +4,7 @@ import Logo from "./logo";
 export default function Header() {
   return (
     // <header className="sticky top-0 z-50 bg-white/95 relative flex items-center justify-center pt-4"> //  use this when u want the navbar to be sticky.
-    <header className="relative flex items-center justify-center pt-4 bg-[#0f0f10] bg-[radial-gradient(circle_at_top,rgba(255,120,40,0.16),transparent_40%)]">
+    <header className="relative flex items-center justify-center pt-4">
 
       {/* Logo */}
       <div className="absolute left-14">

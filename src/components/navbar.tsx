@@ -130,8 +130,8 @@ export default function Navbar() {
                     ease-[cubic-bezier(0.22,1,0.36,1)]
                     ${
                       isActive
-                        ? "text-neutral-50"
-                        : "text-neutral-500 hover:text-neutral-200"
+                         ? "text-neutral-950"
+                         : "text-neutral-600 hover:text-neutral-900" 
                     }
                   `}
                 >
@@ -148,7 +148,7 @@ export default function Navbar() {
                       ${
                         isActive
                           ? "bg-white/10 opacity-100"
-                          : "bg-orange-400/10 group-hover:opacity-100"
+                          : "bg-orange-500/10 group-hover:opacity-100"
                       }
                     `}
                   />
@@ -185,7 +185,7 @@ export default function Navbar() {
                       ease-out
                       ${
                         isActive
-                          ? "translate-y-0 text-white"
+                          ? "translate-y-0 text-neutral-950"
                           : "group-hover:-translate-y-[1px]"
                       }
                     `}
