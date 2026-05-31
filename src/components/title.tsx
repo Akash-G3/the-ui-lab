@@ -76,7 +76,7 @@ export default function Title() {
             initial={{ y: "120%", rotate: 3 }}
             animate={{ y: "0%", rotate: 0 }}
             transition={{ duration: 1.4, ease }}
-            className="text-[14vw] md:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] text-neutral-100"
+           className="text-[14vw] md:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] text-[#e7c9b2]"
           >
             the.ui<span className="text-orange-300">.lab</span>
           </motion.h1>
