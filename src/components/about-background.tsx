@@ -4,7 +4,7 @@ export default function AboutBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Base */}
-      <div className="absolute inset-0 bg-[#f7f7f4]" />
+      <div className="absolute inset-0 bg-[#f6f3ee]" />
 
       {/* Editorial Grid */}
       <div
@@ -40,9 +40,9 @@ export default function AboutBackground() {
             "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
         }}
       >
-        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[22vw] font-black tracking-[-0.11em] text-black/[0.025]">
+        {/* <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[22vw] font-black tracking-[-0.11em] text-black/[0.025]">
           ABOUT
-        </h1>
+        </h1> */}
       </div>
 
       {/* Optional Secondary Word */}
