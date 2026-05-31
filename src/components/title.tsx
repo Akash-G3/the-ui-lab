@@ -8,7 +8,7 @@ const ease = [0.76, 0, 0.24, 1] as const;
 
 export default function Title() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-[#f6f3ee] py-24">
+    <section className="relative flex items-center justify-center overflow-hidden bg-[#f6f3ee]">
 
       {/* radial ambience */}
       <div className="absolute inset-0" />   
@@ -76,7 +76,7 @@ export default function Title() {
             initial={{ y: "120%", rotate: 3 }}
             animate={{ y: "0%", rotate: 0 }}
             transition={{ duration: 1.4, ease }}
-           className="text-[14vw] md:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] text-[#e7c9b2]"
+           className="text-[15vw] md:text-[8.25rem] lg:text-[9.5rem] font-semibold tracking-[-0.04em] text-[#e7c9b2]"
           >
             the.ui<span className="text-orange-300">.lab</span>
           </motion.h1>
@@ -95,9 +95,7 @@ export default function Title() {
               inset-0
               overflow-hidden
               whitespace-nowrap
-              text-[14vw]
-              md:text-8xl
-              lg:text-9xl
+              text-[15vw] md:text-[8.25rem] lg:text-[9.5rem]
               font-semibold
               tracking-[-0.04em]
               text-neutral-800
@@ -120,14 +118,21 @@ export default function Title() {
         </div>
 
         {/* caption */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-          className="mt-6 text-[11px] uppercase tracking-[0.35em] text-neutral-500"
-        >
-          crafted interfaces • motion systems • experiments
-        </motion.p>
+       <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.2, delay: 0.6 }}
+  className="
+    mt-6
+    -translate-y-14
+    text-[11px]
+    uppercase
+    tracking-[0.35em]
+    text-neutral-600
+  "
+>
+  crafted interfaces • motion systems • experiments
+</motion.p>
       </div>
     </section>
   );
