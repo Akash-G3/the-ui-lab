@@ -17,17 +17,17 @@ export default function AfterSec() {
       <div className="absolute left-1/2 top-[-20%] -z-10 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-orange-100 blur-[120px]" />
 
       {/* soft neutral glow */}
-      <div className="absolute bottom-[-30%] right-[10%] -z-10 h-[250px] w-[250px] rounded-full bg-neutral-300 blur-[100px]" />
+      {/* <div className="absolute bottom-[-30%] right-[10%] -z-10 h-[250px] w-[250px] rounded-full bg-neutral-300 blur-[100px]" /> */}
 
       {/* light grid (same system) */}
-      <div
+      {/* <div
         className="absolute inset-0 -z-10 opacity-[0.035]"
         style={{
           backgroundImage:
             "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)",
           backgroundSize: "70px 70px",
         }}
-      />
+      /> */}
 
       {/* vignette */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.03))]" />

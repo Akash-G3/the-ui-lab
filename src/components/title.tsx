@@ -11,7 +11,8 @@ export default function Title() {
     <section className="relative flex items-center justify-center overflow-hidden bg-[#f6f3ee] py-24">
 
       {/* radial ambience */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_40%)]" />
+      <div className="absolute inset-0" />   
+      {/* bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_40%)] */}
 
       {/* subtle mesh */}
       <div
@@ -40,14 +41,32 @@ export default function Title() {
       <div className="relative z-10 mx-auto w-full text-center">
 
         {/* ghost background text */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.04 }}
-          transition={{ duration: 2 }}
-          className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 select-none text-[14rem] font-semibold tracking-[-0.12em] text-white lg:block"
-        >
-          UI LAB
-        </motion.div>
+       <motion.span
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{
+    duration: 2,
+    delay: 0.4,
+  }}
+  className="
+    pointer-events-none
+    absolute
+    left-1/2
+    top-1/2
+    hidden
+    -translate-x-1/2
+    -translate-y-1/2
+    select-none
+    whitespace-nowrap
+    text-[20rem]
+    font-black
+    tracking-[-0.14em]
+    text-black/[0.03]
+    lg:block
+  "
+>
+  UI LAB
+</motion.span>
 
         {/* TITLE WRAPPER */}
         <div className="relative inline-block overflow-hidden">
@@ -113,4 +132,14 @@ export default function Title() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
 

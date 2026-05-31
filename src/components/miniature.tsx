@@ -23,14 +23,14 @@ export default function Miniature() {
       <div className="absolute bottom-[-30%] right-[10%] -z-10 h-[300px] w-[300px] rounded-full bg-neutral-300 blur-[120px]" />
 
       {/* LIGHT GRID (same system as ExhibitionShowcase) */}
-      <div
+      {/* <div
         className="absolute inset-0 -z-10 opacity-[0.035]"
         style={{
           backgroundImage:
             "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)",
           backgroundSize: "70px 70px",
         }}
-      />
+      /> */}
 
       {/* vignette */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.03))]" />
