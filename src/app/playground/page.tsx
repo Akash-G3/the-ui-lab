@@ -1,7 +1,4 @@
 // Import components you want to test here
-import HeroVid from "@/components/heroVid";
-import Miniature from "@/components/miniature";
-import AboutBackground from "@/components/about-background";
 
 // Playground page
 // A safe space to experiment with UI components.
