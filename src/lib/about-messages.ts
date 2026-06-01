@@ -1,41 +1,35 @@
 export const aboutMessages = {
-  home: {
-    name: "Akash",
-    role: "Software Engineer",
-    label: "personal note",
+  aboutUI: {
+    name: "ui.lab",
+    role: "",
+    label: "CRAFT WITH CODE",
     heading:
       "I build thoughtful digital experiences where design, engineering, and storytelling intersect.",
-    paragraphs: [
-      "Every project begins with curiosity and evolves through experimentation, iteration, and craftsmanship.",
-      "I enjoy transforming ideas into systems that feel intuitive, refined, and meaningful.",
-      "My work sits at the intersection of frontend engineering, backend systems, motion design, user experience, and visual storytelling.",
-    ],
+   paragraphs: [
+  "ui lab is a living collection of projects, experiments, and ideas shaped through code. each piece reflects a lesson learned, a challenge explored, or a skill refined, - capturing an ongoing journey of design, engineering, and continuous learning."
+],
     signature: "Akash",
   },
 
-  philosophy: {
+  aboutme: {
     name: "Akash",
-    role: "Backend Engineer",
-    label: "engineering philosophy",
-    heading: "I believe great software should feel invisible.",
+    role: "Software Engineer",
+    label: "Personal note",
+    heading: "I'm Akash - a software engineer , lifelong learner and passionate teacher at heart.",
     paragraphs: [
-      "Systems should work so well that users never notice complexity.",
-      "Scalability and clarity matter more than premature optimization.",
-      "Good architecture is the one that survives change.",
+      "i'm fascinated by the blend of design, engineering and  problem-solving that shapes great software, From intuitive interfaces to the system behind them, I enjoy both, building and understanding.",
     ],
     signature: "Akash",
   },
 
-  project: {
-    name: "Atlas",
-    role: "Case Study",
-    label: "project story",
-    heading: "A cinematic platform built for creators.",
+  connect: {
+    name: "Social Presence",
+    role: "",
+    label: "cloud profiles",
+    heading: "whether you like to discuss technology, share ideas, collaborate on a project or simply say hello, I'd love to hear from you.",
     paragraphs: [
-      "The goal was to merge performance with storytelling.",
-      "Every interaction was designed to feel intentional.",
-      "We focused on motion, hierarchy, and emotional flow.",
+      ".",
     ],
-    signature: "Atlas",
+    signature: "connect",
   },
 };

@@ -40,7 +40,7 @@ export default function AboutUILab() {
             <AboutMeta />
             </div>
             <div className="w-[50%] h-screen">
-              <AboutText data={aboutMessages.home} />
+              <AboutText data={aboutMessages.aboutUI} />
             </div>
 
         </section>
