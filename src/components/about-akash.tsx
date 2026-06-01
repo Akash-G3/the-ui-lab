@@ -31,7 +31,7 @@ export default function AboutAkash() {
           lg:block
         "
       >
-        ABOUT
+        AKASH
       </motion.span>
 
      <div className="w-[45%] flex justify-center items-start">
