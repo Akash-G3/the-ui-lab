@@ -4,9 +4,9 @@ export const aboutMessages = {
     role: "",
     label: "CRAFT WITH CODE",
     heading:
-      "I build thoughtful digital experiences where design, engineering, and storytelling intersect.",
-   paragraphs: [
-  "ui lab is a living collection of projects, experiments, and ideas shaped through code. each piece reflects a lesson learned, a challenge explored, or a skill refined, - capturing an ongoing journey of design, engineering, and continuous learning."
+      "From a problem of scattered projects to a unified creative system",
+paragraphs: [
+  "UI Lab originated from a simple problem—I had built multiple small frontend projects while learning, but none of them felt strong enough to showcase individually. Listing them separately didn’t feel meaningful, so I decided to bring them together into a single, cohesive project that represents my work more clearly. What started as a solution turned into something much more refined. UI Lab is now a living collection of projects, experiments, and ideas shaped through code, where each piece reflects a lesson learned, a challenge explored, or a skill refined—capturing an ongoing journey of design, engineering, and continuous learning."
 ],
     signature: "Akash",
   },
@@ -15,10 +15,10 @@ export const aboutMessages = {
     name: "Akash",
     role: "Software Engineer",
     label: "Personal note",
-    heading: "I'm Akash - a software engineer , lifelong learner and passionate teacher at heart.",
+    heading: "Software engineer, lifelong learner, and passionate teacher",
     paragraphs: [
-      "i'm fascinated by the blend of design, engineering and  problem-solving that shapes great software, From intuitive interfaces to the system behind them, I enjoy both, building and understanding.",
-    ],
+  "I'm Akash — a software engineer, lifelong learner, and passionate teacher. I’m drawn to the intersection of design, engineering, and problem-solving that shapes meaningful software. I enjoy working across both interfaces and systems, focusing on how thoughtful design and solid engineering come together to create simple, effective experiences."
+],
     signature: "Akash",
   },
 
