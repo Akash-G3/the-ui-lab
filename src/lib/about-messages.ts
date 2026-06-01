@@ -12,23 +12,23 @@ paragraphs: [
   },
 
   aboutme: {
-    name: "Akash",
-    role: "Software Engineer",
+    name: "akash",
+    role: "software engineer",
     label: "Personal note",
-    heading: "Software engineer, lifelong learner, and passionate teacher",
+    heading: "software engineer, lifelong learner, and passionate teacher",
     paragraphs: [
-  "I'm Akash — a software engineer, lifelong learner, and passionate teacher. I’m drawn to the intersection of design, engineering, and problem-solving that shapes meaningful software. I enjoy working across both interfaces and systems, focusing on how thoughtful design and solid engineering come together to create simple, effective experiences."
+  "i'm akash — a software engineer, lifelong learner, and passionate teacher. i’m drawn to the intersection of design, engineering, and problem-solving that shapes meaningful software. I enjoy working across both interfaces and systems, focusing on how thoughtful design and solid engineering come together to create simple, effective experiences."
 ],
     signature: "Akash",
   },
 
   connect: {
-    name: "Social Presence",
+    name: "social presence",
     role: "",
     label: "cloud profiles",
     heading: "whether you like to discuss technology, share ideas, collaborate on a project or simply say hello, I'd love to hear from you.",
     paragraphs: [
-      ".",
+      "",
     ],
     signature: "connect",
   },
