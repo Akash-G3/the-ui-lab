@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import AboutMeta from "./about-meta"
 import AboutText from "./about-text";
+import { aboutMessages } from "@/lib/about-messages";
 
 export default function AboutUILab() {
     return (
@@ -38,8 +39,8 @@ export default function AboutUILab() {
             <div className="w-[45%] h-screen">
             <AboutMeta />
             </div>
-            <div className="w-[45%] h-screen">
-              <AboutText />
+            <div className="w-[50%] h-screen">
+              <AboutText data={aboutMessages.home} />
             </div>
 
         </section>
