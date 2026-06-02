@@ -3,6 +3,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LeftCard from "./cards/h-card-left";
+import MidCard from "./cards/h-card-mid";
+import RightCard from "./cards/h-card-right";
 
 const ease = [0.76, 0, 0.24, 1] as const;
 
@@ -32,7 +35,7 @@ export default function HeroVid() {
       /> */}
 
       {/* GRID */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* LEFT */}
         <motion.div
@@ -44,9 +47,11 @@ export default function HeroVid() {
             ease,
           }}
           className="h-[460px] rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl shadow-black/30 relative overflow-hidden"
-        />
+        >
+          <LeftCard />
+        </motion.div>
 
-        {/* CENTER */}
+        {/* CENTER
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +61,9 @@ export default function HeroVid() {
             ease,
           }}
           className="h-[460px] rounded-2xl border border-white/15 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/40 relative overflow-hidden scale-[1.02]"
-        />
+        >
+          <MidCard />
+        </motion.div> */}
 
         {/* RIGHT */}
         <motion.div
@@ -68,7 +75,9 @@ export default function HeroVid() {
             ease,
           }}
           className="h-[460px] rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl shadow-black/30 relative overflow-hidden"
-        />
+        >
+          <RightCard />
+        </motion.div>
 
       </div>
     </motion.section>
