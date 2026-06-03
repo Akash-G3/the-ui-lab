@@ -8,33 +8,33 @@ import { useEffect, useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Motion Lab",
-    category: "Frontend Engineering",
-    image: "https://picsum.photos/1200/800?1",
+    title: "refokus",
+    category: "frontend engineering",
+    image: "/projects/refokusV2.png",
   },
   {
     id: 2,
-    title: "Neon UI",
-    category: "Design Systems",
-    image: "https://picsum.photos/1200/800?2",
+    title: "obys replica",
+    category: "animated design",
+    image: "/projects/obysV2.png",
   },
   {
     id: 3,
-    title: "Dashboard X",
-    category: "Data Visualization",
-    image: "https://picsum.photos/1200/800?3",
+    title: "dribble UI",
+    category: "cards collection",
+    image: "/projects/dribbleV2.png",
   },
   {
     id: 4,
-    title: "Portfolio X",
-    category: "Creative Development",
-    image: "https://picsum.photos/1200/800?4",
+    title: "portfolio replica",
+    category: "creative design",
+    image: "/projects/portfolioV2.png",
   },
   {
     id: 5,
-    title: "Studio One",
-    category: "Interactive Systems",
-    image: "https://picsum.photos/1200/800?5",
+    title: "trendline",
+    category: "learning 03",
+    image: "/projects/trendlineV2.png",
   },
 ];
 
