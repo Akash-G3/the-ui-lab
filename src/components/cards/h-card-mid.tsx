@@ -1,379 +1,270 @@
-// "use client";
-
-// import { motion } from "framer-motion";
-
-// const layouts = [
-//   [
-//     { x: 40, y: 50 },
-//     { x: 150, y: 80 },
-//     { x: 90, y: 180 },
-//   ],
-//   [
-//     { x: 70, y: 50 },
-//     { x: 70, y: 130 },
-//     { x: 170, y: 130 },
-//   ],
-//   [
-//     { x: 50, y: 90 },
-//     { x: 150, y: 90 },
-//     { x: 100, y: 180 },
-//   ],
-// ];
-
-// export default function MidCard() {
-//   return (
-//     <div className="relative h-full w-full">
-
-//       {layouts[0].map((_, index) => (
-//         <motion.div
-//           key={index}
-//           animate={{
-//             x: layouts.map((l) => l[index].x),
-//             y: layouts.map((l) => l[index].y),
-//           }}
-//           transition={{
-//             duration: 8,
-//             repeat: Infinity,
-//             ease: "easeInOut",
-//           }}
-//           className="absolute h-20 w-20 rounded-2xl border border-orange-100 bg-white shadow-sm"
-//         />
-//       ))}
-
-//       <motion.div
-//         animate={{
-//           opacity: [0, 1, 0],
-//         }}
-//         transition={{
-//           duration: 2,
-//           repeat: Infinity,
-//         }}
-//         className="absolute bottom-10 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-400"
-//       />
-//     </div>
-//   );
-// }
-
-
-// "use client";
-
-// import { motion } from "framer-motion";
-
-// const cards = [
-//   "Weather",
-//   "Dashboard",
-//   "Portfolio",
-//   "Music",
-//   "Todo",
-//   "Landing",
-//   "Ecommerce",
-//   "Blog",
-//   "Admin",
-// ];
-
-// export default function MidCard() {
-//   return (
-//     <div className="relative h-full w-full overflow-hidden">
-
-//       {/* Ambient */}
-//       <motion.div
-//         animate={{
-//           x: [-30, 40, -30],
-//           y: [-20, 20, -20],
-//         }}
-//         transition={{
-//           duration: 16,
-//           repeat: Infinity,
-//           ease: "easeInOut",
-//         }}
-//         className="
-//           absolute
-//           left-1/2
-//           top-1/2
-//           h-[280px]
-//           w-[280px]
-//           -translate-x-1/2
-//           -translate-y-1/2
-//           rounded-full
-//           bg-orange-300/15
-//           blur-[120px]
-//         "
-//       />
-
-//       {/* Masonry */}
-//       <div className="absolute inset-0 p-6 pb-28">
-
-//         <div className="grid grid-cols-3 gap-3">
-
-//           {cards.map((card, index) => (
-//             <motion.div
-//               key={card}
-//               initial={{
-//                 opacity: 0,
-//                 y: 50,
-//                 scale: 0.9,
-//               }}
-//               animate={{
-//                 opacity: [0, 1, 1],
-//                 y: [50, 0, 0],
-//                 scale: [0.9, 1, 1],
-//               }}
-//               transition={{
-//                 duration: 0.8,
-//                 delay: index * 0.12,
-//                 repeat: Infinity,
-//                 repeatDelay: 3,
-//               }}
-//               className={`
-//                 rounded-2xl
-//                 border
-//                 border-black/5
-//                 bg-white/80
-//                 backdrop-blur-xl
-//                 shadow-[0_10px_30px_rgba(0,0,0,0.05)]
-//                 overflow-hidden
-//                 ${
-//                   index % 4 === 0
-//                     ? "h-32"
-//                     : index % 3 === 0
-//                     ? "h-24"
-//                     : "h-20"
-//                 }
-//               `}
-//             >
-//               <div className="h-full p-3">
-
-//                 <div className="h-10 rounded-lg bg-gradient-to-br from-orange-50 to-neutral-100" />
-
-//                 <div className="mt-3 h-2 w-3/4 rounded-full bg-neutral-200" />
-
-//                 <div className="mt-2 h-2 w-1/2 rounded-full bg-neutral-100" />
-
-//               </div>
-//             </motion.div>
-//           ))}
-
-//         </div>
-//       </div>
-
-//       {/* Counter */}
-//       <motion.div
-//         animate={{
-//           scale: [1, 1.04, 1],
-//         }}
-//         transition={{
-//           duration: 3,
-//           repeat: Infinity,
-//         }}
-//         className="
-//           absolute
-//           right-6
-//           top-6
-//           rounded-full
-//           bg-white/80
-//           backdrop-blur
-//           px-4
-//           py-2
-//           text-xs
-//           font-medium
-//         "
-//       >
-//         27 Projects
-//       </motion.div>
-
-//       {/* Bottom */}
-//       <div className="absolute bottom-0 left-0 right-0 p-6">
-
-//         <div className="mb-4 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-
-//         <h3 className="text-lg font-semibold text-neutral-900">
-//           Archive
-//         </h3>
-
-//         <p className="mt-2 text-sm text-neutral-500">
-//           A growing collection of experiments.
-//         </p>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
 
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const cards = Array.from({ length: 6 });
-
-const rotations = [-4, 3, -2, 5, -3, 2];
-
-const containerVariants = {
-  idle: {},
-  active: {
-    transition: {
-      staggerChildren: 0.14,
-    },
-  },
-};
-
-const cardVariants = {
-  idle: (index) => ({
-    opacity: 0.55,
-    scale: 0.96,
-    rotate: rotations[index],
-    y: 0,
-  }),
-
-  active: (index) => ({
-    opacity: 1,
-
-    y: [-40, 8, -2, 0],
-
-    rotate: [
-      rotations[index] - 8,
-      rotations[index] + 2,
-      rotations[index],
-    ],
-
-    scale: [0.9, 1.04, 1],
-
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  }),
-};
+const experiments = [
+  { title: "refokus", x: 40, y: 90 },
+  { title: "obys", x: 230, y: 70 },
+  { title: "lenis-scroll", x: 45, y: 280 },
+  { title: "layerd UI", x: 240, y: 260 },
+];
 
 export default function MidCard() {
-  const [active, setActive] = useState(false);
+  const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhase((p) => (p + 1) % 4);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const centerX = 180;
+  const centerY = 190;
 
   return (
-    <div
-      className="relative h-full w-full overflow-hidden"
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
-      {/* Ambient Glow */}
+    <div className="absolute inset-0 overflow-hidden">
+
+      {/* soft orange glow (background only) */}
       <motion.div
         animate={{
-          scale: [1, 1.05, 1],
-          opacity: [0.12, 0.18, 0.12],
+          scale: [1, 1.2, 1],
+          opacity: [0.12, 0.2, 0.12],
         }}
         transition={{
-          duration: 8,
+          duration: 6,
           repeat: Infinity,
-          ease: "easeInOut",
         }}
         className="
           absolute
           left-1/2
           top-1/2
-          h-[280px]
-          w-[280px]
+          w-[300px]
+          h-[300px]
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-orange-400/20
-          blur-[120px]
+          bg-white-400/20
+          blur-[110px]
+          pointer-events-none
         "
       />
 
-      {/* Archive Grid */}
-      <div className="absolute inset-0 p-6 pb-28">
-        <motion.div
-          variants={containerVariants}
-          initial="idle"
-          animate={active ? "active" : "idle"}
-          className="grid grid-cols-2 gap-4"
-        >
-          {cards.map((_, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariants}
-              whileHover={{
-                y: -4,
-                scale: 1.02,
-                rotate: rotations[index] * 0.5,
-              }}
-              transition={{
-                duration: 0.25,
-              }}
-              className="
-                overflow-hidden
-                rounded-2xl
-                border
-                border-black/[0.05]
-                bg-white/80
-                backdrop-blur-xl
-                shadow-[0_12px_30px_rgba(0,0,0,0.06)]
-              "
-            >
-              <div className="p-3">
-                {/* Thumbnail */}
-                <div
-                  className="
-                    h-12
-                    rounded-xl
-                    bg-gradient-to-br
-                    from-orange-50
-                    via-neutral-50
-                    to-neutral-100
-                  "
-                />
+      {/* title */}
+      <div className="absolute top-5 left-5 z-20">
+        <p className="text-[10px] uppercase tracking-[0.25em] text-orange-400/70">
+          UI Lab Evolution
+        </p>
 
-                {/* Text */}
-                <div className="mt-4 h-2 w-3/4 rounded-full bg-neutral-200" />
-                <div className="mt-2 h-2 w-1/2 rounded-full bg-neutral-100" />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <p className="text-xs text-zinc-500 mt-1">
+          experiments become systems
+        </p>
       </div>
 
-      {/* Counter */}
-      <motion.div
-        animate={
-          active
-            ? {
-                scale: [1, 1.08, 1],
-              }
-            : {}
-        }
-        transition={{
-          duration: 0.8,
-        }}
-        className="
-          absolute
-          right-6
-          top-6
-          rounded-full
-          bg-white/80
-          backdrop-blur-xl
-          px-4
-          py-2
-          text-xs
-          font-medium
-          shadow-[0_8px_20px_rgba(0,0,0,0.05)]
-        "
-      >
-        27 Projects
-      </motion.div>
+      {/* experiment cards */}
+      <AnimatePresence>
+        {phase < 2 &&
+          experiments.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{
+                opacity: 0,
+                scale: 0.85,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.7,
+              }}
+              transition={{
+                delay: i * 0.08,
+              }}
+              className="
+                absolute
+                w-[110px]
+                h-[80px]
+                rounded-xl
+                border
+                border-black/10
+                
+                backdrop-blur-md
+                shadow-sm
+              "
+              style={{
+                left: item.x,
+                top: item.y,
+              }}
+            >
+              <div className="h-11 bg-orange-400/10 rounded-t-xl bg-orange-400" />
 
-      {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 p-6">
-        <div className="mb-4 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+              <p className="text-[11px] text-zinc-700 px-3 pt-2">
+                {item.title}
+              </p>
+            </motion.div>
+          ))}
+      </AnimatePresence>
 
-        <h3 className="text-lg font-semibold text-neutral-900">
-          Archive
-        </h3>
+      {/* connection lines */}
+      {phase >= 1 && phase < 3 && (
+        <svg className="absolute inset-0 w-full h-full">
+          {experiments.map((item) => (
+            <motion.line
+              key={item.title}
+              x1={item.x + 55}
+              y1={item.y + 35}
+              x2={centerX}
+              y2={centerY}
+              stroke="rgba(251,146,60,.35)"
+              strokeWidth="1.2"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 0.9 }}
+            />
+          ))}
+        </svg>
+      )}
 
-        <p className="mt-2 text-sm text-neutral-500">
-          A growing collection of experiments.
-        </p>
+      {/* merging cards */}
+      {phase >= 2 && phase < 3 && (
+        <>
+          {experiments.map((item) => (
+            <motion.div
+              key={item.title}
+              initial={{
+                x: item.x,
+                y: item.y,
+                opacity: 1,
+              }}
+              animate={{
+                x: centerX - 55,
+                y: centerY - 35,
+                opacity: 0,
+                scale: 0.3,
+              }}
+              transition={{
+                duration: 0.9,
+              }}
+              className="
+                absolute
+                w-[110px]
+                h-[70px]
+                rounded-xl
+                border
+                border-black/10
+               
+                backdrop-blur-md
+              "
+            />
+          ))}
+        </>
+      )}
+
+      {/* final UI LAB card */}
+      <AnimatePresence>
+        {phase >= 3 && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              absolute
+              left-1/2
+              top-1/2
+              w-[300px]
+              h-[260px]
+              -translate-x-1/2
+              -translate-y-1/2
+              rounded-2xl
+              border
+              border-black/10
+              bg-white/70
+              backdrop-blur-xl
+              shadow-lg
+              overflow-hidden
+            "
+          >
+            <div className="h-12 border-b border-black/10 px-4 flex items-center">
+              <div className="w-2 h-2 rounded-full bg-orange-400 mr-2" />
+              <span className="text-sm text-zinc-900 font-medium">
+                UI LAB
+              </span>
+            </div>
+
+            <div className="p-4">
+              <div className="flex gap-6">
+                <div>
+                  <p className="text-xl text-zinc-900 font-bold">
+                    10+
+                  </p>
+                  <p className="text-[10px] text-zinc-500 uppercase">
+                    Experiments
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-xl text-zinc-900 font-bold">
+                    7+
+                  </p>
+                  <p className="text-[10px] text-zinc-500 uppercase">
+                    Animations
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 mt-5">
+                {[1, 2, 3, 4].map((i) => (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      opacity: [0.4, 0.9, 0.4],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.15,
+                    }}
+                    className="
+                      h-10
+                      rounded-lg
+                      bg-black/[0.03]
+                      border
+                      border-black/5
+                    "
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* bottom caption */}
+      <div className="absolute bottom-5 left-5 right-5">
+        <motion.div
+          key={phase}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-xs text-zinc-500"
+        >
+          {phase < 1 && "Collecting experiments"}
+          {phase === 1 && "Connecting ideas"}
+          {phase === 2 && "Merging into system"}
+          {phase === 3 && "UI Lab emerges"}
+        </motion.div>
       </div>
     </div>
   );

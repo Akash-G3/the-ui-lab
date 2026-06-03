@@ -1,487 +1,230 @@
 
-// "use client";
-
-// import { motion, animate, useMotionValue } from "framer-motion";
-// import { useEffect, useRef, useState } from "react";
-
-// const cards = [
-//   { id: 1, title: "Project Alpha", img: "https://picsum.photos/900/600?1" },
-//   { id: 2, title: "Neon UI", img: "https://picsum.photos/900/600?2" },
-//   { id: 3, title: "3D Dashboard", img: "https://picsum.photos/900/600?3" },
-//   { id: 4, title: "Motion Lab", img: "https://picsum.photos/900/600?4" },
-//   { id: 5, title: "Portfolio X", img: "https://picsum.photos/900/600?5" },
-// ];
-
-// const CARD_WIDTH = 240;
-// const CARD_HEIGHT = 300;
-// const GAP = 18;
-// const ITEM = CARD_WIDTH + GAP;
-
-// export default function LeftCard() {
-//   const containerRef = useRef(null);
-//   const x = useMotionValue(0);
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   // LEFT → RIGHT AUTO FLOW
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveIndex((prev) => (prev - 1 + cards.length) % cards.length);
-//     }, 2400);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   // smooth camera movement
-//   useEffect(() => {
-//     animate(x, -activeIndex * ITEM, {
-//       type: "spring",
-//       stiffness: 120,
-//       damping: 20,
-//       mass: 1,
-//     });
-//   }, [activeIndex]);
-
-//   return (
-//     <div
-//       ref={containerRef}
-//       className="relative w-full h-full overflow-hidden flex items-center justify-center"
-//     >
-//       {/* ambient glow */}
-//       <div className="absolute inset-0 bg-gradient-radial from-orange-400/5 via-transparent to-transparent" />
-
-//       {/* rail */}
-//       <motion.div
-//         className="flex gap-[28px] absolute left-1/2 top-1/2 -translate-y-1/2"
-//         style={{ x, xPercent: -50 }}
-//       >
-//         {cards.map((card, i) => (
-//           <FocusCard
-//             key={card.id}
-//             card={card}
-//             index={i}
-//             activeIndex={activeIndex}
-//           />
-//         ))}
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-// /* ---------------- CARD ---------------- */
-
-// function FocusCard({ card, index, activeIndex }) {
-//   const distance = Math.abs(index - activeIndex);
-
-//   // 🎯 smooth focus curve (no hard jumps)
-//   const scale =
-//     distance === 0 ? 1.22 :
-//     distance === 1 ? 0.95 :
-//     0.82;
-
-//   const opacity =
-//     distance === 0 ? 1 :
-//     distance === 1 ? 0.55 :
-//     0.25;
-
-//   const y =
-//     distance === 0 ? -12 : 0;
-
-//   const blur =
-//     distance === 0 ? "0px" :
-//     distance === 1 ? "1px" :
-//     "2px";
-
-//   return (
-//     <motion.div
-//       animate={{ scale, opacity, y }}
-//       transition={{
-//         duration: 0.65,
-//         ease: [0.22, 1, 0.36, 1],
-//       }}
-//       style={{
-//         width: CARD_WIDTH,
-//         height: CARD_HEIGHT,
-//         filter: `blur(${blur})`,
-//         zIndex: distance === 0 ? 50 : 1,
-//       }}
-//       className="relative rounded-2xl overflow-hidden"
-//     >
-//       {/* image */}
-//       <img
-//         src={card.img}
-//         className="w-full h-full object-cover scale-[1.08]"
-//       />
-
-//       {/* cinematic overlay */}
-//       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
-
-//       {/* top bar */}
-//       <div className="absolute top-0 left-0 right-0 h-10 bg-black/40 backdrop-blur-md flex items-center px-3 gap-2">
-//         <span className="w-2 h-2 rounded-full bg-red-400/80" />
-//         <span className="w-2 h-2 rounded-full bg-yellow-400/80" />
-//         <span className="w-2 h-2 rounded-full bg-green-400/80" />
-
-//         <div className="ml-3 text-[10px] text-white/40">
-//           preview.dev
-//         </div>
-//       </div>
-
-//       {/* title only center */}
-//       {distance === 0 && (
-//         <motion.div
-//           initial={{ opacity: 0, y: 10 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           className="absolute bottom-4 left-4 text-white"
-//         >
-//           <p className="text-sm font-medium tracking-tight">
-//             {card.title}
-//           </p>
-//           <p className="text-[10px] text-white/50">
-//             click to explore
-//           </p>
-//         </motion.div>
-//       )}
-
-//       {/* glow depth */}
-//       <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_60px_rgba(255,120,40,0.08)]" />
-//     </motion.div>
-//   );
-// }
-
-
-
-// "use client";
-
-// import { motion, animate, useMotionValue } from "framer-motion";
-// import { useEffect, useState } from "react";
-
-// const cards = [
-//   { id: 1, title: "Project Alpha", img: "https://picsum.photos/900/600?1" },
-//   { id: 2, title: "Neon UI", img: "https://picsum.photos/900/600?2" },
-//   { id: 3, title: "3D Dashboard", img: "https://picsum.photos/900/600?3" },
-//   { id: 4, title: "Motion Lab", img: "https://picsum.photos/900/600?4" },
-//   { id: 5, title: "Portfolio X", img: "https://picsum.photos/900/600?5" },
-// ];
-
-// const CARD_WIDTH = 360;
-// const CARD_HEIGHT = 240;
-// const GAP = 94;
-// const ITEM = CARD_WIDTH + GAP;
-
-// /* ---------------- MAIN ---------------- */
-
-// export default function LeftCard() {
-//   const x = useMotionValue(0);
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   // LEFT → RIGHT FLOW
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveIndex((prev) => (prev - 1 + cards.length) % cards.length);
-//     }, 2400);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   // camera movement
-//   useEffect(() => {
-//     animate(x, -activeIndex * ITEM, {
-//       type: "spring",
-//       stiffness: 120,
-//       damping: 20,
-//       mass: 1,
-//     });
-//   }, [activeIndex]);
-
-//   return (
-//     <div className="relative w-full h-full overflow-visible flex items-center justify-center">
-      
-//       {/* ambient glow */}
-//       <div className="absolute inset-0 bg-gradient-radial from-orange-400/5 via-transparent to-transparent" />
-
-//       {/* rail */}
-//       <motion.div
-//         className="flex gap-[22px] absolute left-1/2 top-1/2 -translate-y-1/2"
-//         style={{ x }}
-//       >
-//         {cards.map((card, i) => (
-//           <FocusCard
-//             key={card.id}
-//             card={card}
-//             index={i}
-//             activeIndex={activeIndex}
-//           />
-//         ))}
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-// /* ---------------- FOCUS CARD (INLINE) ---------------- */
-
-// function FocusCard({ card, index, activeIndex }) {
-//   const distance = Math.abs(index - activeIndex);
-
-//   const scale =
-//     distance === 0 ? 1.28 :
-//     distance === 1 ? 0.86 :
-//     0.72;
-
-//   const opacity =
-//     distance === 0 ? 1 :
-//     distance === 1 ? 0.55 :
-//     0.2;
-
-//   const blur =
-//     distance === 0 ? "0px" :
-//     distance === 1 ? "2px" :
-//     "3px";
-
-//   const y =
-//     distance === 0 ? -14 : 0;
-
-//   return (
-//     <motion.div
-//       animate={{ scale, opacity, y }}
-//       transition={{
-//         duration: 0.65,
-//         ease: [0.22, 1, 0.36, 1],
-//       }}
-//       style={{
-//         width: CARD_WIDTH,
-//         height: CARD_HEIGHT,
-//         filter: `blur(${blur})`,
-//         zIndex: distance === 0 ? 50 : 1,
-//       }}
-//       className="relative rounded-2xl overflow-hidden bg-black/20"
-//     >
-
-//       {/* 🔥 browser frame */}
-//       <div className="absolute top-0 left-0 right-0 h-9 bg-black/50 backdrop-blur-md flex items-center px-3 gap-2 z-20">
-//         <span className="w-2 h-2 rounded-full bg-red-400/80" />
-//         <span className="w-2 h-2 rounded-full bg-yellow-400/80" />
-//         <span className="w-2 h-2 rounded-full bg-green-400/80" />
-//         <div className="ml-2 text-[10px] text-white/40">
-//           {card.title.toLowerCase().replace(" ", "")}.dev
-//         </div>
-//       </div>
-
-//       {/* 🔥 image container (important fix) */}
-//       <div className="absolute inset-0 pt-9">
-//         <img
-//           src={card.img}
-//           className="w-full h-full object-cover object-top scale-[1.05]"
-//         />
-//       </div>
-
-//       {/* 🔥 depth overlay (better realism) */}
-//       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-//       {/* center text */}
-//       {distance === 0 && (
-//         <motion.div
-//           initial={{ opacity: 0, y: 12 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           className="absolute bottom-4 left-4 text-white z-30"
-//         >
-//           <p className="text-sm font-medium tracking-tight">
-//             {card.title}
-//           </p>
-//           <p className="text-[10px] text-white/50">
-//             live preview
-//           </p>
-//         </motion.div>
-//       )}
-
-//       {/* subtle inner glow */}
-//       <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_90px_rgba(255,120,40,0.10)]" />
-
-//     </motion.div>
-//   );
-// }
-
-
-
-
 
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const cards = [
+const projects = [
   {
     id: 1,
-    title: "Project Alpha",
-    img: "https://picsum.photos/900/600?1",
+    title: "Motion Lab",
+    category: "Frontend Engineering",
+    image: "https://picsum.photos/1200/800?1",
   },
   {
     id: 2,
     title: "Neon UI",
-    img: "https://picsum.photos/900/600?2",
+    category: "Design Systems",
+    image: "https://picsum.photos/1200/800?2",
   },
   {
     id: 3,
-    title: "3D Dashboard",
-    img: "https://picsum.photos/900/600?3",
+    title: "Dashboard X",
+    category: "Data Visualization",
+    image: "https://picsum.photos/1200/800?3",
   },
   {
     id: 4,
-    title: "Motion Lab",
-    img: "https://picsum.photos/900/600?4",
+    title: "Portfolio X",
+    category: "Creative Development",
+    image: "https://picsum.photos/1200/800?4",
   },
   {
     id: 5,
-    title: "Portfolio X",
-    img: "https://picsum.photos/900/600?5",
+    title: "Studio One",
+    category: "Interactive Systems",
+    image: "https://picsum.photos/1200/800?5",
   },
 ];
-
-const POSITIONS = {
-  left: {
-    x: -240,
-    scale: 0.75,
-    opacity: 0.25,
-    filter: "blur(4px)",
-    zIndex: 1,
-  },
-
-  center: {
-    x: 0,
-    y: -10,
-    scale: 1.15,
-    opacity: 1,
-    filter: "blur(0px)",
-    zIndex: 10,
-  },
-
-  right: {
-    x: 240,
-    scale: 0.75,
-    opacity: 0.25,
-    filter: "blur(4px)",
-    zIndex: 1,
-  },
-};
 
 export default function LeftCard() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % cards.length);
-    }, 2600);
+      setActive((prev) => (prev + 1) % projects.length);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const prev =
-    (active - 1 + cards.length) % cards.length;
-
-  const next =
-    (active + 1) % cards.length;
-
-  const visibleCards = [
-    {
-      ...cards[prev],
-      slot: "left",
-    },
-    {
-      ...cards[active],
-      slot: "center",
-    },
-    {
-      ...cards[next],
-      slot: "right",
-    },
-  ];
+  const project = projects[active];
 
   return (
-    <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
+    <div className="relative h-full w-full overflow-hidden p-5">
+      {/* Ambient */}
+      <motion.div
+        animate={{
+          opacity: [0.2, 0.5, 0.2],
+          scale: [1, 1.04, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+        }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.08),transparent_70%)]"
+      />
 
-      {/* ambient glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.08),transparent_65%)]" />
+      {/* Top Label */}
+      <div className="relative z-20 mb-4">
+        <p className="text-[10px] uppercase tracking-[0.25em] text-orange-400/70">
+          Featured Project
+        </p>
+      </div>
 
-      <AnimatePresence mode="popLayout">
-        {visibleCards.map((card) => (
+      {/* Browser Window */}
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md">
+        {/* Browser Header */}
+        <div className="flex h-8 items-center gap-2 border-b border-white/5 bg-black/40 px-3">
+          <span className="h-2 w-2 rounded-full bg-red-400" />
+          <span className="h-2 w-2 rounded-full bg-yellow-400" />
+          <span className="h-2 w-2 rounded-full bg-green-400" />
+
+          <span className="ml-2 text-[9px] text-neutral-800">
+            preview.live
+          </span>
+        </div>
+
+        <div className="relative h-[240px] overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={project.id}
+              src={project.image}
+              alt={project.title}
+              initial={{
+                opacity: 0,
+                scale: 1.08,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.96,
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </AnimatePresence>
+
+          {/* Slow cinematic pan */}
           <motion.div
-            key={`${card.id}-${card.slot}`}
-            layout
-            initial={{
-              opacity: 0,
-              scale: 0.6,
-            }}
-            animate={POSITIONS[card.slot]}
-            exit={{
-              opacity: 0,
-              scale: 0.6,
+            animate={{
+              x: [0, -25, 0],
             }}
             transition={{
-              duration: 1,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
-            className="absolute"
-            style={{
-              width: 360,
-              height: 240,
+            className="absolute inset-0"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+          {/* Reflection Sweep */}
+          <motion.div
+            animate={{
+              x: ["-120%", "180%"],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute inset-0 w-[35%] skew-x-12 bg-white/[0.04] blur-xl"
+          />
+        </div>
+      </div>
+
+      {/* Bottom Content */}
+      <div className="mt-5 flex items-end justify-between">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={project.id}
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -10,
+            }}
+            transition={{
+              duration: 0.4,
             }}
           >
-            <div className="relative w-full h-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm">
+            <h3 className="text-lg font-medium text-neutral-700">
+              {project.title}
+            </h3>
 
-              {/* browser frame */}
-              <div className="absolute top-0 left-0 right-0 h-9 bg-black/50 backdrop-blur-md flex items-center px-3 gap-2 z-20">
-                <span className="w-2 h-2 rounded-full bg-red-400/80" />
-                <span className="w-2 h-2 rounded-full bg-yellow-400/80" />
-                <span className="w-2 h-2 rounded-full bg-green-400/80" />
-
-                <div className="ml-2 text-[10px] text-white/40">
-                  {card.title.toLowerCase().replace(/\s/g, "")}.dev
-                </div>
-              </div>
-
-              {/* image */}
-              <img
-                src={card.img}
-                alt={card.title}
-                className="w-full h-full object-cover object-top"
-              />
-
-              {/* overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-              {/* center card content */}
-              {card.slot === "center" && (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 10,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.2,
-                    duration: 0.5,
-                  }}
-                  className="absolute bottom-4 left-4 z-30 text-white"
-                >
-                  <p className="text-sm font-medium tracking-tight">
-                    {card.title}
-                  </p>
-
-                  <p className="text-[11px] text-white/50">
-                    Live Preview
-                  </p>
-                </motion.div>
-              )}
-
-              {/* glow */}
-              <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_90px_rgba(255,120,40,0.08)]" />
-            </div>
+            <p className="text-sm text-neutral-500">
+              {project.category}
+            </p>
           </motion.div>
-        ))}
-      </AnimatePresence>
+        </AnimatePresence>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={project.id}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            className="text-right"
+          >
+            <p className="text-2xl font-light text-neutral-500">
+              {String(active + 1).padStart(2, "0")}
+            </p>
+
+            <p className="text-[10px] text-neutral-500">
+              / {String(projects.length).padStart(2, "0")}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Progress Bar */}
+      <motion.div
+        key={active}
+        initial={{
+          width: 0,
+        }}
+        animate={{
+          width: "100%",
+        }}
+        transition={{
+          duration: 5,
+          ease: "linear",
+        }}
+        className="absolute bottom-0 left-0 h-[2px] bg-orange-500"
+      />
+
+      {/* Corner Glow */}
+      <motion.div
+        animate={{
+          opacity: [0.1, 0.35, 0.1],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+        }}
+        className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-orange-500/20 blur-3xl"
+      />
     </div>
   );
 }

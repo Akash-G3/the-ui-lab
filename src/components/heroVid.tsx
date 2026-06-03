@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -19,10 +18,10 @@ export default function HeroVid() {
         delay: 1.6, // 🔥 reduced heavily
         ease,
       }}
-      className="relative w-full px-10 pb-8 overflow-hidden"
+      className="relative w-full overflow-hidden bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_40%)]"
     >
       {/* ambient */}
-      <div className="absolute inset-0 " />
+      {/* <div className="absolute inset-0 " /> */}
       {/* bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_40%)] */}
 
       {/* <div
@@ -35,7 +34,7 @@ export default function HeroVid() {
       /> */}
 
       {/* GRID */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 ">
 
         {/* LEFT */}
         <motion.div
@@ -46,12 +45,12 @@ export default function HeroVid() {
             delay: 1.65,
             ease,
           }}
-          className="h-[460px] rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl shadow-black/30 relative overflow-hidden"
+          className="h-[460px] border-r border-orange-400 relative overflow-hidden"
         >
           <LeftCard />
         </motion.div>
 
-        {/* CENTER
+        {/* CENTER card */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,10 +59,10 @@ export default function HeroVid() {
             delay: 1.7,
             ease,
           }}
-          className="h-[460px] rounded-2xl border border-white/15 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/40 relative overflow-hidden scale-[1.02]"
+          className="h-[460px] border-r border-orange-400 relative overflow-hidden"
         >
           <MidCard />
-        </motion.div> */}
+        </motion.div>
 
         {/* RIGHT */}
         <motion.div
@@ -74,7 +73,7 @@ export default function HeroVid() {
             delay: 1.75,
             ease,
           }}
-          className="h-[460px] rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl shadow-black/30 relative overflow-hidden"
+          className="h-[460px] relative overflow-hidden"
         >
           <RightCard />
         </motion.div>
@@ -83,3 +82,4 @@ export default function HeroVid() {
     </motion.section>
   );
 }
+
