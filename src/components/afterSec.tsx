@@ -38,11 +38,11 @@ export default function AfterSec() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9, ease }}
-        className="relative text-center rounded-[2rem] border border-black/5 bg-white/70 px-10 py-8 shadow-[0_10px_60px_rgba(0,0,0,0.05)] backdrop-blur-xl"
+        className="relative text-center rounded-[2rem]  px-10 py-8 shadow-[0_10px_60px_rgba(0,0,0,0.05)] backdrop-blur-xl"
       >
 
         {/* TITLE */}
-        <h1 className="text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-neutral-900">
+        <h1 className="text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-neutral-800">
           intro&apos;s over{" "}
           <span className="text-orange-500">_gentleman</span>
         </h1>
