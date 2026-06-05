@@ -199,7 +199,7 @@ function Card({
   );
 }
 
-export default function ExhibitionRoute() {
+export default function GuideRoute() {
   const progress = useMotionValue(0);
 
   const pathRef = useRef<SVGPathElement>(null);

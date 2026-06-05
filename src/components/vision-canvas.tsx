@@ -8,7 +8,7 @@ import RightCard from "./cards/h-card-right";
 
 const ease = [0.76, 0, 0.24, 1] as const;
 
-export default function HeroVid() {
+export default function VisionCanvas() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 35 }}
