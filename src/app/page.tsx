@@ -10,7 +10,9 @@ export default function HomePage() {
         <Title />
         </div>
         <VisionCanvas />
+        <div className="lg:min-h-screen">
         <GuideRoute />
+        </div>
       </section>
     </main>
   );
