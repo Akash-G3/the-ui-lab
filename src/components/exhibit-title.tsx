@@ -7,7 +7,7 @@ const ease = [0.76, 0, 0.24, 1] as const
 
 export default function ExhibitTitle() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f6f3ee] px-6 text-neutral-900">
+    <section className="relative flex md:min-h-screen items-center justify-center overflow-hidden bg-[#f6f3ee] px-6 text-neutral-900">
 
       {/* Background */}
       <div className="absolute inset-0">
@@ -99,7 +99,7 @@ export default function ExhibitTitle() {
             duration: 1,
             ease,
           }}
-          className="mb-10 flex items-center justify-between text-[10px] uppercase tracking-[0.35em] text-neutral-500 md:text-xs"
+          className="mb-10 md:mt-0 mt-8 flex items-center justify-between text-[10px] uppercase tracking-[0.35em] text-neutral-500 md:text-xs"
         >
           <span>curated digital exhibition</span>
 
