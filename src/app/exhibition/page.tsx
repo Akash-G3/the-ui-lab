@@ -4,7 +4,7 @@ import ExhibitionClosing from "../../components/exhibition-closing";
 
 export default function ExhibitionPage() {
   return (
-    <section className="container">
+    <section className="">
       <div className="">
         <ExhibitTitle />
         <ExhibitionShowcase />
