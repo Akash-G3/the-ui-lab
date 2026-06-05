@@ -7,7 +7,7 @@ export default function Header() {
     <header className="relative flex items-center justify-center pt-4 bg-[#f6f3ee]  bg-[radial-gradient(circle_at_center,rgba(255,120,40,0.12),transparent_30%)]">
 
       {/* Logo */}
-      <div className="absolute left-14">
+      <div className="absolute left-14 hidden md:block">
         <Logo />
       </div>
 
@@ -17,4 +17,3 @@ export default function Header() {
     </header>
   );
 }
-

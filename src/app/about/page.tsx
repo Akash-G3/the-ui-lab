@@ -5,7 +5,7 @@ import AboutConnect from "@/components/about-connect";
 
 export default function AboutPage() {
   return (
-         <main className="relative min-h-screen bg-[#f7f7f4] overflow-hidden">
+      <main className="relative min-h-screen bg-[#f7f7f4] overflow-hidden">
       
       {/* BACKGROUND */}
       <AboutBackground />
@@ -15,12 +15,7 @@ export default function AboutPage() {
         <AboutUILab />
         <AboutAkash />
         <AboutConnect />
-
-        {/* Hero section */}
-        {/* About text */}
-        {/* Social links */}
       </div>
-
     </main>
     
   );

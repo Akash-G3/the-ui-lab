@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -35,7 +34,7 @@ export default function Title() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-[120px]"
+        className="absolute left-1/2 top-1/2 md:h-[420px] md:w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-[120px]"
       />
 
       <div className="relative z-10 mx-auto w-full text-center">
@@ -58,7 +57,8 @@ export default function Title() {
     -translate-y-1/2
     select-none
     whitespace-nowrap
-    text-[20rem]
+    md:text-[20rem]
+    text-[24rem]
     font-black
     tracking-[-0.14em]
     text-black/[0.03]
@@ -76,7 +76,7 @@ export default function Title() {
             initial={{ y: "120%", rotate: 3 }}
             animate={{ y: "0%", rotate: 0 }}
             transition={{ duration: 1.4, ease }}
-           className="text-[15vw] md:text-[8.25rem] lg:text-[9.5rem] font-semibold tracking-[-0.04em] text-[#e7c9b2]"
+           className="text-[20vw] md:text-[8.25rem] lg:text-[9.5rem] font-semibold tracking-[-0.04em] text-[#e7c9b2]"
           >
             the.ui<span className="text-orange-300">.lab</span>
           </motion.h1>
@@ -95,7 +95,7 @@ export default function Title() {
               inset-0
               overflow-hidden
               whitespace-nowrap
-              text-[15vw] md:text-[8.25rem] lg:text-[9.5rem]
+              text-[20vw] md:text-[8.25rem] lg:text-[9.5rem]
               font-semibold
               tracking-[-0.04em]
               text-neutral-800
@@ -123,9 +123,11 @@ export default function Title() {
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1.2, delay: 0.6 }}
   className="
-    mt-6
+    md:mt-6
+    mt-8
     -translate-y-14
-    text-[11px]
+    md:text-[11px]
+    text-[8px]
     uppercase
     tracking-[0.35em]
     text-neutral-600
