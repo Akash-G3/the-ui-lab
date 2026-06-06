@@ -6,7 +6,7 @@ import { aboutMessages } from "@/lib/about-messages";
 
 export default function AboutAkash() {
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex">
+        <section className="relative md:w-full md:min-h-screen overflow-hidden md:flex">
                         {/* Ghost Word */}
       <motion.span
         initial={{ opacity: 0 }}
@@ -34,15 +34,15 @@ export default function AboutAkash() {
         AKASH
       </motion.span>
 
-     <div className="w-[45%] flex justify-center items-start">
+     <div className="md:w-[45%] md:flex w-full md:justify-center md:items-start">
   <div className="overflow-hidden rounded-[32px]">
     <img
       src="/Avatar.png"
       alt="Avatar"
       className="
         w-full
-        max-w-[400px]
-        h-auto
+        md:max-w-[400px]
+        md:h-auto
         object-contain
         drop-shadow-[0_0_40px_rgba(255,120,20,0.25)]
         [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]
@@ -51,7 +51,7 @@ export default function AboutAkash() {
     />
   </div>
 </div>
-      <div className="w-[50%] h-screen">
+      <div className="md:w-[50%] md:h-screen w-full">
         <AboutText data={aboutMessages.aboutme} />
       </div>
 

@@ -20,7 +20,7 @@ export default function AboutMessage({
   data: AboutMessageData;
 }) {
   return (
-    <div className="relative min-h-screen flex items-start pt-14">
+    <div className="relative min-h-screen flex items-start pt-14 md:mr-0 mr-8">
 
       {/* Ambient Glow (UNCHANGED vibe) */}
       <motion.div

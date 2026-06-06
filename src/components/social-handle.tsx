@@ -20,7 +20,7 @@ const socials = [
 
 export default function SocialHandle() {
   return (
-    <div className="w-full h-[70%] flex items-start justify-center pl-24 pt-16">
+    <div className="w-full h-[70%] flex items-start justify-center md:pl-24 md:pt-16 ml-6 mt-6 md:ml-0 md:mt-0">
       <div className="w-full max-w-md">
 
         {/* Header Section (UPGRADED) */}
@@ -64,7 +64,9 @@ export default function SocialHandle() {
                   items-center
                   gap-4
                   rounded-xl
-                  px-4
+                  md:px-4
+                  md:py-3
+                  px-0
                   py-3
                   border
                   border-transparent

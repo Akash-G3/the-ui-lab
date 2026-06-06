@@ -9,7 +9,7 @@ import { aboutMessages } from "@/lib/about-messages";
 
 export default function AboutUILab() {
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex">
+        <section className="relative w-full md:min-h-screen overflow-hidden md:flex">
                  {/* Ghost Word */}
       <motion.span
         initial={{ opacity: 0 }}
@@ -36,10 +36,10 @@ export default function AboutUILab() {
       >
         ABOUT
       </motion.span>
-            <div className="w-[45%] h-screen">
+            <div className="md:w-[45%] w-full  h-[28vh] md:h-screen">
             <AboutMeta />
             </div>
-            <div className="w-[50%] h-screen">
+            <div className="md:w-[50%] md:h-screen w-full">
               <AboutText data={aboutMessages.aboutUI} />
             </div>
 
